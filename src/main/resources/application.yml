@@ -1,0 +1,38 @@
+server:
+  port: ${portConfrontaBatch}
+
+sftp1:
+  host: ${sftpHost}
+  port: ${sftpPort}
+  user: ${sftpUser}
+  pass: ${sftpPass}
+  path: ${sftpPath}
+
+sftp2:
+  host: ${finalSftpHost}
+  port: ${finalSftpPort}
+  user: ${finalSftpUser}
+  pass: ${finalSftpPass}
+  path: ${finalSftpPath}
+
+spring:
+  data:
+    mongodb:
+      authentication-database: ${authenticationdatabaseMongo}
+      username: ${usrMongoCifras}
+      password: ${pwMongoCifras}
+      database: ${databaseMongo}
+      port: ${portMongo}
+      host: ${hostMongo}
+  batch:
+    job:
+      enabled: false
+  application:
+    name: btpmc-confronta
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    com.demo: INFO
